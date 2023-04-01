@@ -1,7 +1,6 @@
 package rop;
 
 import ConfigRequest.RequestConfiguration;
-import io.restassured.http.ContentType;
 import org.apache.http.HttpStatus;
 import pojo.PostPOJO;
 
@@ -9,7 +8,7 @@ import java.lang.reflect.Type;
 
 import static io.restassured.RestAssured.*;
 
-public class GetPostROP extends BaseRequestObjectPattern<GetPostROP, PostPOJO[]>{
+public class GetAllPostsROP extends BaseRequestObjectPattern<GetAllPostsROP, PostPOJO[]>{
 
     @Override
     protected Type responsePayload() {
@@ -22,7 +21,7 @@ public class GetPostROP extends BaseRequestObjectPattern<GetPostROP, PostPOJO[]>
     }
 
     @Override
-    public GetPostROP sendRequestPayload() {
+    public GetAllPostsROP sendRequestPayload() {
         response = given()
                 .spec(RequestConfiguration.getConfigRequest())
                 .when()
