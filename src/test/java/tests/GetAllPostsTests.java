@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pojo.PostPOJO;
 import rop.GetAllPostsROP;
 
-public class GetAllPostsTest extends BaseClass {
+public class GetAllPostsTests extends BaseClass {
 
     @Test
     public void getAllPost() {

@@ -7,7 +7,8 @@ import org.testng.annotations.Test;
 import pojo.PostPOJO;
 import rop.GetPostByUserROP;
 
-public class GetPostByUserTest extends BaseClass {
+public class GetPostByUserTests extends BaseClass {
+
 
     @Test
     public void getPostByUserId() {

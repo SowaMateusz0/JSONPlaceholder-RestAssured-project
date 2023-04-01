@@ -6,9 +6,11 @@ import pojo.PostPOJO;
 
 import java.lang.reflect.Type;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 
-public class GetAllPostsROP extends BaseRequestObjectPattern<GetAllPostsROP, PostPOJO[]>{
+public class GetSpecificNumberOfPostsROP extends BaseRequestObjectPattern<GetSpecificNumberOfPostsROP, PostPOJO[]>{
+
+    private Integer postLimit;
 
     @Override
     protected Type responsePayload() {
@@ -21,11 +23,17 @@ public class GetAllPostsROP extends BaseRequestObjectPattern<GetAllPostsROP, Pos
     }
 
     @Override
-    public GetAllPostsROP sendRequestPayload() {
+    public GetSpecificNumberOfPostsROP sendRequestPayload() {
         response = given()
                 .spec(RequestConfiguration.getConfigRequest())
+                .queryParam("_limit",postLimit)
                 .when()
                 .get("posts");
+        return this;
+    }
+
+    public GetSpecificNumberOfPostsROP setPostLimit(Integer postLimit){
+        this.postLimit = postLimit;
         return this;
     }
 }

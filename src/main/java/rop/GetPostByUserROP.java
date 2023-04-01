@@ -30,7 +30,7 @@ public class GetPostByUserROP extends BaseRequestObjectPattern<GetPostByUserROP,
                 .spec(RequestConfiguration.getConfigRequest())
                 .queryParam("userId",userId)
                 .when()
-                .get("/posts");
+                .get("posts");
         return this;
     }
 
